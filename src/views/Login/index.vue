@@ -1,45 +1,47 @@
 <template>
-  <section class="login">
+  <div class="container">
     <Header></Header>
-    <section class="form-box animate__fadeIn">
-      <el-form
-        :model="loginForm"
-        :rules="loginRules"
-        class="login-form"
-        autocomplete="on"
-        label-position="left"
-        ref="form"
-      >
-        <el-form-item prop="username">
-          <el-input
-            v-model="loginForm.username"
-            placeholder="请输入用户名"
-            maxlength="100"
-            clearable
-            @keyup.enter="onLogin"
-          >
-          </el-input>
-        </el-form-item>
-        <el-form-item prop="password">
-          <el-input
-            type="password"
-            v-model="loginForm.password"
-            maxlength="100"
-            placeholder="请输入密码"
-            @keyup.enter="onLogin"
-          >
-          </el-input>
-        </el-form-item>
-        <BorderBox8 style="height: 34px">
-          <!-- prevent 修饰符 阻止该元素的默认keyup事件 -->
-          <el-button :loading="loading" type="primary" class="login-btn" @click.prevent="onLogin"
-            >登录</el-button
-          >
-        </BorderBox8>
-        <!-- <BorderBox1 :color="['red', 'green']" backgroundColor="blue">BorderBox1</BorderBox1> -->
-      </el-form>
-    </section>
-  </section>
+    <div class="login">
+      <section class="form-box animate__fadeIn">
+        <el-form
+          :model="loginForm"
+          :rules="loginRules"
+          class="login-form"
+          autocomplete="on"
+          label-position="left"
+          ref="form"
+        >
+          <el-form-item prop="username">
+            <el-input
+              v-model="loginForm.username"
+              placeholder="请输入用户名"
+              maxlength="100"
+              clearable
+              @keyup.enter="onLogin"
+            >
+            </el-input>
+          </el-form-item>
+          <el-form-item prop="password">
+            <el-input
+              type="password"
+              v-model="loginForm.password"
+              maxlength="100"
+              placeholder="请输入密码"
+              @keyup.enter="onLogin"
+            >
+            </el-input>
+          </el-form-item>
+          <BorderBox8 style="height: 40px">
+            <!-- prevent 修饰符 阻止该元素的默认keyup事件 -->
+            <el-button :loading="loading" type="primary" class="login-btn" @click.prevent="onLogin"
+              >登录</el-button
+            >
+          </BorderBox8>
+          <!-- <BorderBox1 :color="['red', 'green']" backgroundColor="blue">BorderBox1</BorderBox1> -->
+        </el-form>
+      </section>
+    </div>
+  </div>
 </template>
 <script lang="ts">
 import { defineComponent, ref, reactive, unref } from 'vue'

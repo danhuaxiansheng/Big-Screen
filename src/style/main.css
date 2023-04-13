@@ -3,7 +3,6 @@
 a,
 .green {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
   transition: 0.4s;
 }
 html,
@@ -14,6 +13,7 @@ body,
   font-size: 0.12rem;
   font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
     '微软雅黑', Arial, sans-serif;
+  color: #d2f5ff;
 }
 
 @media (hover: hover) {
@@ -27,4 +27,9 @@ body,
     display: flex;
     place-items: center;
   }
+}
+
+.container {
+  min-height: 100%;
+  width: 100%;
 }
