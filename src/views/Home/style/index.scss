@@ -1,0 +1,260 @@
+.tabsType1 .tabsFace {
+  border: 1px solid #004d68;
+  position: relative;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.tabsType1 .tabsFace::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border-top: 2px solid #0078a2;
+  border-left: 2px solid #0078a2;
+  position: absolute;
+  top: -2px;
+  left: -2px;
+}
+
+.tabsType1 .tabsFace::after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border-bottom: 2px solid #0078a2;
+  border-right: 2px solid #0078a2;
+  position: absolute;
+  right: -2px;
+  bottom: -2px;
+}
+
+.tabsType1 .tabsBox::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border-bottom: 2px solid #0078a2;
+  border-left: 2px solid #0078a2;
+  position: absolute;
+  bottom: -2px;
+  left: -2px;
+}
+
+.tabsType1 .tabsBox::after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border-top: 2px solid #0078a2;
+  border-right: 2px solid #0078a2;
+  position: absolute;
+  top: -2px;
+  right: -2px;
+}
+
+.bigScreen {
+  background-image: url(../image/bg.jpg);
+  height: 1024px;
+  width: 2560px;
+  overflow: hidden;
+}
+
+.screenBox {
+  padding: 0 10px;
+  /*background-color: rgba(0, 0, 0, 0.3);*/
+  height: 100%;
+  overflow: hidden;
+}
+
+.svg_box {
+  position: absolute;
+  border-radius: 5px;
+}
+
+/*动画延时*/
+.delayHalf {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+
+/*清除浮动*/
+.clear_both {
+  clear: both;
+}
+
+/*tabs标签样式*/
+.el-tabs__nav.is-top {
+  background-color: rgb(64, 65, 67);
+  border-radius: 13px;
+}
+
+.el-tabs__header {
+  height: 26px;
+}
+
+.el-tabs__item.is-top {
+  padding: 0 16px !important;
+  line-height: 26px;
+  height: 26px;
+  border-radius: 13px;
+  color: #bfbfbf;
+  font-size: 12px;
+}
+
+.el-tabs__active-bar {
+  display: none;
+}
+
+.el-tabs__nav-wrap.is-top {
+  position: absolute;
+  right: 0;
+}
+
+.el-tabs__nav-wrap.is-top::after {
+  background-color: transparent;
+}
+
+.el-tabs__item.is-top.is-active {
+  background-color: #b9c500;
+  color: #fff;
+  font-weight: bold;
+}
+
+/*农牧小版块*/
+.border_little {
+  border: 1px solid #00b0f0;
+  text-align: center;
+  border-radius: 3px;
+  padding: 8px 0;
+  margin-bottom: 15px;
+  height: 79px;
+  width: 210px;
+}
+
+.border_little p {
+  font-size: 24px;
+  color: #ff8f00;
+  margin-bottom: 5px;
+}
+
+.border_little span {
+  color: #b4b4b4;
+  font-size: 12px;
+}
+
+/*iframe样式*/
+iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/*标题样式*/
+.title2 {
+  margin-bottom: 10px;
+}
+
+.title2 i {
+  color: #ffc000;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 16px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+.title2 span {
+  font-size: 14px;
+  color: #fff;
+  font-weight: normal;
+  display: inline-block;
+  vertical-align: middle;
+  letter-spacing: 1px;
+}
+
+.title2 p {
+  float: right;
+  color: #999;
+  font-size: 12px;
+}
+
+/*2020-08-26新首页、新地产*/
+.card_list {
+  border: 1px solid #13284d;
+  border-radius: 10px;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.light {
+  position: absolute;
+  top: -100%;
+  left: -5%;
+  background: radial-gradient(
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0)
+  );
+  width: 110%;
+  height: 200%;
+}
+
+.card_list .card_box {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+}
+
+.card_list .title {
+  color: #f9a825;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.card_list .subTitle {
+  color: #bfbfbf;
+  letter-spacing: 1px;
+  margin: 10px 0 15px;
+}
+
+.card_list .name {
+  color: #b3b3b7;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.card_list .line {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(179, 179, 183, 0), #b3b3b7, rgba(179, 179, 183, 0));
+}
+
+.card_list .number {
+  color: #b9c500;
+  letter-spacing: 1px;
+  font-size: 48px;
+  font-weight: bold;
+  margin: 50px 0 40px;
+}
+
+.card_list .unit {
+  color: #7f7f7f;
+  font-size: 16px;
+}
+
+.card_list .percentage {
+  color: #a6a6a6;
+  margin-top: 55px;
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+
+.card_list .percentage .num {
+  color: #d6a204;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.card_list .percentage i {
+  color: #ffc000;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+}

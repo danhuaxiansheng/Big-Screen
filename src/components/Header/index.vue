@@ -7,14 +7,14 @@
 import { defineComponent, ref, reactive, unref } from 'vue'
 // import AfHeader from '@/components/header/index.vue'
 
-import { BorderBox8 } from '@dataview/datav-vue3'
+// import { BorderBox8 } from '@kjgl77/datav-vue3'
 
 /**上传证书弹出框 */
 export default defineComponent({
   name: 'header',
   components: {
     // AfHeader
-    BorderBox8
+    // BorderBox8
   },
   setup() {
     return {}

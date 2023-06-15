@@ -6,6 +6,8 @@ import router from './router'
 
 import "element-plus/dist/index.css";
 import "animate.css";
+
+import "@/style/iconfont.css"
 import '@/style/main.css';
 
 import ElementPlus from "element-plus";

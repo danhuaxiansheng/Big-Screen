@@ -31,12 +31,12 @@
             >
             </el-input>
           </el-form-item>
-          <BorderBox8 style="height: 40px">
-            <!-- prevent 修饰符 阻止该元素的默认keyup事件 -->
-            <el-button :loading="loading" type="primary" class="login-btn" @click.prevent="onLogin"
-              >登录</el-button
-            >
-          </BorderBox8>
+          <!-- <BorderBox8 style="height: 40px"> -->
+          <!-- prevent 修饰符 阻止该元素的默认keyup事件 -->
+          <el-button :loading="loading" type="primary" class="login-btn" @click.prevent="onLogin"
+            >登录</el-button
+          >
+          <!-- </BorderBox8> -->
           <!-- <BorderBox1 :color="['red', 'green']" backgroundColor="blue">BorderBox1</BorderBox1> -->
         </el-form>
       </section>
@@ -48,14 +48,14 @@ import { defineComponent, ref, reactive, unref } from 'vue'
 import router from '@/router/index'
 import Header from '@/components/Header/index.vue'
 
-import { BorderBox8 } from '@dataview/datav-vue3'
+// import { BorderBox8 } from '@kjgl77/datav-vue3'
 
 /**上传证书弹出框 */
 export default defineComponent({
   name: 'loginIndex',
   components: {
-    Header,
-    BorderBox8
+    Header
+    // BorderBox8
   },
   setup() {
     const form = ref<HTMLFormElement>()
@@ -94,7 +94,7 @@ export default defineComponent({
         if (valid) {
           loading.value = true
           router.push({
-            path: '/entrance'
+            path: '/homeIndex'
           })
         }
       })

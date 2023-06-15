@@ -1,1 +1,1 @@
-declare module '@dataview/datav-vue3';
+declare module '@kjgl77/datav-vue3';

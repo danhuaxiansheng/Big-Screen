@@ -21,6 +21,13 @@ const router = createRouter({
       component: () => import("../views/Login/index.vue"),
       meta: { title: "登录", },
     },
+
+    {
+      path: "/homeIndex",
+      name: "homeIndex",
+      component: () => import("../views/Home/index.vue"),
+      meta: { title: "监控大屏", },
+    },
   ]
 })
 
