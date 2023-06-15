@@ -6,7 +6,11 @@
       </div>
       <div class="topCenter">
         <div>龙大美食全流程监控台</div>
-        <img src="./img/titleBackground.png" alt="" style="height: 100%; position: absolute" />
+        <img
+          src="@/assets/image/titleBackground.png"
+          alt=""
+          style="height: 100%; position: absolute"
+        />
       </div>
     </div>
     <div class="bottom">
