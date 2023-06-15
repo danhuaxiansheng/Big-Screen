@@ -76,7 +76,7 @@ export default {
       rightTwoShow: false,
       mapShow: false,
       homeData: JSON.parse(
-        '{"staffData":{"membePercentage":178,"staffNum":21045,"memberNum":2246},"assetsArr":[{"income":19.36,"year":2015,"assets":198.25},{"income":25.17,"year":2016,"assets":325.11},{"income":34.21,"year":2017,"assets":345.81},{"income":77.61,"year":2018,"assets":450.36},{"income":210.76,"year":2019,"assets":583.89}],"allTotalArr":[{"year":"2022","number":"711.00","percentage":13.5,"name":"总产值"},{"year":"2022","number":"990","percentage":7.2,"name":"总资产"}],"yearTaskData":{"estate":92,"health":93,"supply":90,"farming":90},"assetsData":{"yearArray":[{"year":2019,"plateAssets":[{"number":119.35,"name":"农牧业"},{"number":440.18,"name":"房地产"},{"number":4.94,"name":"大健康"},{"number":18.7,"name":"供应链"},{"number":0.4,"name":"酒店"},{"number":0.32,"name":"其他"}],"percentage":"14.36"}]},"weatherData":{"img":"https://bk.landarun.com/group1/M00/02/56/CqwVDV_Fu4WAXa6rAAAWha6wEN8528.png","temperatureText":"小雨","quality":"32 优","temperature":"6℃~9℃","humidity":"95%"},"navData":[{"src":"房地产"},{"src":"大健康"},{"src":"供应链"},{"src":"酒店"},{"src":"物业"}]}'
+        '{"staffData":{"membePercentage":178,"staffNum":21045,"memberNum":2246},"assetsArr":[{"income":19.36,"year":2015,"assets":198.25},{"income":25.17,"year":2016,"assets":325.11},{"income":34.21,"year":2017,"assets":345.81},{"income":77.61,"year":2018,"assets":450.36},{"income":210.76,"year":2019,"assets":583.89}],"allTotalArr":[{"year":"2022","number":"808亿","percentage":13.5,"name":"总产值"},{"year":"2022","number":"990亿","percentage":7.2,"name":"总资产"}],"yearTaskData":{"estate":92,"health":93,"supply":90,"farming":90},"assetsData":{"yearArray":[{"year":2019,"plateAssets":[{"number":119.35,"name":"农牧业"},{"number":440.18,"name":"房地产"},{"number":4.94,"name":"大健康"},{"number":18.7,"name":"供应链"},{"number":0.4,"name":"酒店"},{"number":0.32,"name":"其他"}],"percentage":"14.36"}]},"weatherData":{"img":"https://bk.landarun.com/group1/M00/02/56/CqwVDV_Fu4WAXa6rAAAWha6wEN8528.png","temperatureText":"小雨","quality":"32 优","temperature":"6℃~9℃","humidity":"95%"},"navData":[{"src":"房地产"},{"src":"大健康"},{"src":"供应链"},{"src":"酒店"},{"src":"物业"}]}'
       ),
       newData: {},
       farmData: {},
@@ -340,22 +340,22 @@ export default {
 .lr_left {
   position: absolute;
   left: 0;
-  width: 24%;
+  width: 26%;
 }
 
 .lr_center {
   position: absolute;
-  width: 50%;
+  width: 46%;
   left: 50%;
   top: 40px;
-  height: 780px;
+  height: 810px;
   transform: translateX(-50%);
 }
 
 .lr_right {
   position: absolute;
   right: 0;
-  width: 24%;
+  width: 26%;
 }
 
 .leftTwo :deep(.snake-borders) {

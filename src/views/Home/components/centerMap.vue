@@ -3,7 +3,7 @@
     <div class="center_title">
       <!--<i class="fa fa-globe"></i>-->
       <h3>产业布局</h3>
-      <span>截止2021年</span>
+      <span>截止2022年</span>
     </div>
     <div class="center_box">
       <china-map></china-map>

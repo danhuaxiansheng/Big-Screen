@@ -61,38 +61,14 @@
     <div class="tabsType1 two_box">
       <div class="tabsFace">
         <div class="tabsBox">
-          <div class="title_box">
-            <div class="title">今日业绩监控</div>
-            <div class="line"></div>
-          </div>
-          <div class="one_list">
-            <div class="list" v-for="(v, k) in twoList" :key="k">
-              <div class="name">{{ v.name }}</div>
-              <div class="number">{{ v.number }}</div>
-              <div class="unit">{{ v.unit }}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="tabsType1 three_box">
-      <div class="tabsFace">
-        <div class="tabsBox">
-          <div class="title_box">
-            <div class="title">年度目标达成</div>
-            <div class="line"></div>
-          </div>
-          <div class="three_list">
-            <div class="list" v-for="(v, k) in threeList" :key="k">
-              <el-progress
-                type="circle"
-                :percentage="v.percentage"
-                :stroke-width="9"
-                :width="106"
-              ></el-progress>
-              <div class="name">{{ v.name }}</div>
-            </div>
-          </div>
+          <img :src="city_img" />
+          <span>
+            蓝润集团创始于1997年，秉承“实业报国
+            服务民生”的企业使命，深耕大消费领域，是以食品业为主的大型综合性产业集团，现拥有员工2万余人，与全球20多个国家和地区建立合作。连续多年入选“中国企业500强”“中国民营企业500强”，位列“四川民营企业100强”第三位。2021年，集团产值730亿元。
+            <br />
+            <br />
+            蓝润集团顺应现代消费升级需求，融入科技化发展进程，旗下食品主业以工匠精神与科技创新，焕发中华美食新生机。在深耕食品主业的同时，稳步运营与管理旗下商业、酒店等优质资产，满足多元化消费场景需求。目前，管理资产规模超千亿元。
+          </span>
         </div>
       </div>
     </div>
@@ -103,6 +79,8 @@ import cloud from '@/assets/image/cloud.png'
 import sun from '@/assets/image/sun.png'
 import rain from '@/assets/image/rain.png'
 import sun_cloud from '@/assets/image/sun_cloud.png'
+
+import city_img from '@/assets/image/city.jpg'
 
 export default {
   props: ['twoList', 'weatherData', 'taskData'],
@@ -119,25 +97,7 @@ export default {
       timer: null,
       oneTem: '',
       twoTem: '',
-      threeList: [
-        {
-          percentage: 89,
-          name: '预制菜肴'
-        },
-        {
-          percentage: 84,
-          name: '屠宰分割'
-        },
-        {
-          percentage: 87,
-          name: '生猪养殖'
-        },
-        {
-          percentage: 73,
-          name: '资产运营'
-        }
-      ],
-      imgSrc: null
+      city_img: city_img
     }
   },
   methods: {
@@ -161,10 +121,6 @@ export default {
     }
   },
   mounted() {
-    this.threeList[0].percentage = this.taskData.farming
-    this.threeList[1].percentage = this.taskData.estate
-    this.threeList[2].percentage = this.taskData.health
-    this.threeList[3].percentage = this.taskData.supply
     this.timer = setInterval(() => {
       this.getTime()
     }, 1000)
@@ -186,6 +142,11 @@ $switchColor: #6c7506;
 i {
   color: $juse;
 }
+
+.right_two {
+  margin-top: 18px;
+}
+
 .one_box {
   border: 1px solid #004d68;
   padding: 15px 30px;
@@ -224,7 +185,15 @@ i {
   .tabsFace {
     background: rgba(9, 23, 46, 0.8);
     .tabsBox {
-      height: 308px;
+      height: 725px;
+      padding: 10px;
+      img {
+        height: 484px;
+        width: 100%;
+      }
+      span {
+        font-size: 14px;
+      }
     }
   }
 }

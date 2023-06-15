@@ -13,7 +13,7 @@
             </div>
           </div>
           <div class="title">
-            <div>2020 年度数据</div>
+            <div>2022 年度数据</div>
           </div>
         </div>
       </div>
@@ -23,18 +23,18 @@
         <i class="fa fa-user"></i>
         <div class="rt_one_num">
           <div class="name">在职人员</div>
-          <count :val="listData.staffNum || 0" class="plate_num" />
+          <div class="plate_num">
+            <span duration="2000">{{ listData.staffNum || 0 }}</span>
+          </div>
         </div>
       </div>
       <div class="rt_one_right">
         <i class="icon iconfont">&#xe6c7;</i>
         <div class="rt_one_num">
           <div class="name">共产党员</div>
-          <count :val="listData.memberNum || 0" class="plate_num" />
-          <!--<div class="rt_one_text">
-            预备党员
-            <span>{{listData.membePercentage}}</span>
-          </div>-->
+          <div class="plate_num">
+            <span duration="2000">{{ listData.memberNum || 0 }}</span>
+          </div>
         </div>
       </div>
     </div>
@@ -68,18 +68,22 @@
 <script>
 import honorImg from '../images/honor.png'
 export default {
-  props: ['oneList', 'listData'],
+  props: ['oneList'],
   components: {},
   data() {
     return {
+      listData: {
+        staffNum: 20089,
+        memberNum: 1526
+      },
       honorList: [
         {
-          number: 294,
+          number: 319,
           value1: '中国企业',
           value2: '500 强'
         },
         {
-          number: 125,
+          number: 128,
           value1: '中国民营',
           value2: '企业 500 强'
         },
@@ -119,7 +123,7 @@ export default {
 }
 .one_box {
   .tabsBox {
-    height: 300px;
+    height: 413px;
     display: flex;
     justify-content: space-between;
     background: url('../images/one_bg.png') center no-repeat;
@@ -222,8 +226,22 @@ export default {
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
+  .rt_one_num {
+    display: inline-block;
+    vertical-align: middle;
+    .plate_num {
+      display: inline-block;
+      span {
+        color: rgb(210, 225, 0);
+        font-size: 30px;
+        font-weight: bold;
+      }
+    }
+  }
   .rt_one_left {
     width: 48.5%;
+    display: flex;
+    align-items: center;
   }
   i {
     font-size: 52px;
@@ -236,19 +254,7 @@ export default {
     font-size: 16px;
     letter-spacing: 2px;
   }
-  i,
-  .rt_one_num {
-    display: inline-block;
-    vertical-align: middle;
-    :deep(.plate_num) {
-      display: inline-block;
-      span {
-        color: rgb(210, 225, 0);
-        font-size: 30px;
-        font-weight: bold;
-      }
-    }
-  }
+
   .rt_one_text {
     display: inline-block;
     margin-left: 15px;
@@ -261,19 +267,8 @@ export default {
   }
   .rt_one_right {
     width: 48.5%;
-    i {
-      // color: rgb(226, 6, 27);
-    }
-    // :deep(.plate_num {
-    //   span {
-    //     color: rgb(226, 6, 27);
-    //   }
-    // }
-    // .rt_one_text {
-    //   span {
-    //     color: rgb(226, 6, 27);
-    //   }
-    // }
+    display: flex;
+    align-items: center;
   }
 }
 .rt_one > div {
@@ -302,8 +297,13 @@ export default {
     .tabsFace {
       background: rgba(255, 255, 255, 0.05);
       height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .honor_box {
+      height: 100%;
+      padding: 25px 14px;
       .icon {
         width: 40px;
         text-align: center;
@@ -314,7 +314,7 @@ export default {
         }
         .number {
           color: rgb(255, 192, 0);
-          font-size: 24px;
+          font-size: 21px;
           margin-top: 2px;
           font-weight: bold;
         }
@@ -331,12 +331,12 @@ export default {
         }
       }
       .value {
-        margin-left: 15px;
+        margin-left: 5px;
         p {
-          font-size: 16px;
+          font-size: 15px;
         }
         p:last-child {
-          margin-top: 5px;
+          margin-top: 3px;
         }
       }
     }

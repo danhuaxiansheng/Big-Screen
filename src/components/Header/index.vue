@@ -1,6 +1,6 @@
 <template>
   <section class="header animate__fadeIn">
-    <span>全流程监测台</span>
+    <span>龙大美食全流程监控台</span>
   </section>
 </template>
 <script lang="ts">

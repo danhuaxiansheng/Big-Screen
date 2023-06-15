@@ -47,7 +47,7 @@
 import { defineComponent, ref, reactive, unref } from 'vue'
 import router from '@/router/index'
 import Header from '@/components/Header/index.vue'
-
+import { ElMessage } from 'element-plus'
 // import { BorderBox8 } from '@kjgl77/datav-vue3'
 
 /**上传证书弹出框 */
@@ -84,18 +84,32 @@ export default defineComponent({
     })
     //登录
     function onLogin(): void {
-      // unref(form) 获取el-form 中的值和方法
       const validForm: HTMLFormElement | undefined = unref(form)
       if (!validForm) {
         return
       }
+
       // validate 校验结束后触发 返回是否校验成功
       validForm.validate((valid: boolean): void => {
         if (valid) {
-          loading.value = true
-          router.push({
-            path: '/homeIndex'
-          })
+          if (
+            (loginForm.username == 'user' && loginForm.password == 'Longda@2022') ||
+            (loginForm.username == 'admin' && loginForm.password == 'longda@it2022')
+          ) {
+            //alert("登陆成功！")
+            window.sessionStorage.setItem('username', loginForm.username)
+            window.sessionStorage.setItem('password', loginForm.password)
+
+            loading.value = true
+            router.push({
+              path: '/homeIndex'
+            })
+          } else {
+            ElMessage.error('账户或密码错误！')
+          }
+          //  else {
+          //     alert("用户名或密码错误！请重新登录")
+          // }
         }
       })
     }
