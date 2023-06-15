@@ -143,8 +143,8 @@ i {
 }
 
 .right_two {
-  margin-top: 14px;
-  height: calc(100% - 14px);
+  margin-top: 8px;
+  height: calc(100% - 8px);
   .weather_box {
     border: 1px solid #004d68;
     padding: 14px 30px;
@@ -195,9 +195,9 @@ i {
           width: 100%;
         }
         span {
-          font-size: 15px;
+          font-size: 14px;
           color: #d2d2d2;
-          margin-top: 26px;
+          /* margin-top: 26px; */
           display: inline-block;
         }
       }

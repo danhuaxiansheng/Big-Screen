@@ -119,8 +119,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 .left_box {
-  margin-top: 14px;
-  height: calc(100% - 14px);
+  margin-top: 8px;
+  height: calc(100% - 8px);
 }
 .one_box {
   height: 46%;

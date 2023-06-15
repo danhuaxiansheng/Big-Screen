@@ -298,29 +298,30 @@ export default {
 <style lang="scss" scoped>
 .screenBox {
   background: url(@/assets/image/bg.png) no-repeat scroll top center;
-  background-size: auto 100%;
+  background-size: auto 101%;
   height: 100%;
   width: 100%;
+  padding: 10px;
 }
 
 .line {
   position: relative;
 }
 
-.line .left {
-  position: absolute;
-  // left: -348px;
-  width: 41%;
-}
-
-.line .right {
-  position: absolute;
-  right: -0;
-  width: 41%;
+.line {
+  .right {
+    position: absolute;
+    right: -0;
+    width: 40%;
+  }
+  .left {
+    position: absolute;
+    width: 40%;
+  }
 }
 
 .lr_title {
-  padding-top: 55px;
+  padding-top: 34px;
   position: relative;
 }
 
@@ -371,16 +372,15 @@ export default {
 
 .centerBox {
   position: absolute;
-  left: calc(50% - 215px);
+  left: calc(50% - 205px);
   top: 0px;
-}
-
-.centerBg {
-  width: 430px;
-  height: 114px;
-  background: url(/src/assets/image/nav.png) 0 0 no-repeat scroll transparent;
-  background-size: 100% 100%;
-  overflow: hidden;
+  .centerBg {
+    width: 410px;
+    height: 108px;
+    background: url(/src/assets/image/nav.png) 0 0 no-repeat scroll transparent;
+    background-size: 100% 100%;
+    overflow: hidden;
+  }
 }
 
 .lr_title_line1 {
@@ -421,8 +421,8 @@ export default {
 
 .lr_content {
   position: relative;
-  margin: 40px 0;
-  height: calc(100% - 130px);
+  height: calc(100% - 102px);
+  margin-top: 60px;
 }
 
 .lr_left {
