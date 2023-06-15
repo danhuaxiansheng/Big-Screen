@@ -119,11 +119,16 @@ export default {
 </script>
 <style lang="scss" scoped>
 .left_box {
-  margin-top: 18px;
+  margin-top: 14px;
+  height: calc(100% - 14px);
 }
 .one_box {
+  height: 46%;
+  .tabsFace {
+    height: 100%;
+  }
   .tabsBox {
-    height: 413px;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     background: url('../images/one_bg.png') center no-repeat;
@@ -226,6 +231,7 @@ export default {
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
+  height: 14%;
   .rt_one_num {
     display: inline-block;
     vertical-align: middle;
@@ -279,70 +285,82 @@ export default {
 }
 
 .rt_two {
-  .tabsType1 {
-    margin-top: 35px;
-  }
-}
-
-.three_list {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  .tabsFace {
-    border: 0px;
-  }
-  .list {
-    width: 31%;
-    height: 100px;
+  height: calc(38% - 44px);
+  margin-top: 30px;
+  .three_list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: space-between;
+    align-content: flex-end;
     .tabsFace {
-      background: rgba(255, 255, 255, 0.05);
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      border: 0px;
     }
-    .honor_box {
-      height: 100%;
-      padding: 25px 14px;
-      .icon {
-        width: 40px;
-        text-align: center;
+    .list {
+      width: calc(33.33% - 10px);
+      margin-top: 37px;
+      margin-right: 5px;
+      margin-left: 5px;
+      height: calc(50% - 20px);
+      .tabsFace {
+        background: rgba(255, 255, 255, 0.05);
         height: 100%;
-        .top {
-          font-size: 12px;
-          color: rgb(159, 167, 10);
-        }
-        .number {
-          color: rgb(255, 192, 0);
-          font-size: 21px;
-          margin-top: 2px;
-          font-weight: bold;
-        }
-        .img {
-          position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .tabsBox {
           height: 100%;
-          img {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 100%;
-            left: 0;
+          width: 100%;
+        }
+      }
+      .honor_box {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .icon {
+          width: 40px;
+          text-align: center;
+          height: 46px;
+          .top {
+            font-size: 12px;
+            color: rgb(159, 167, 10);
+          }
+          .number {
+            color: rgb(255, 192, 0);
+            font-size: 21px;
+            margin-top: 2px;
+            font-weight: bold;
+          }
+          .img {
+            position: relative;
+            height: 100%;
+            img {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              width: 100%;
+              left: 0;
+            }
+          }
+        }
+        .value {
+          margin-left: 7px;
+          height: 46px;
+          p {
+            font-size: 15px;
+          }
+          p:last-child {
+            margin-top: 3px;
           }
         }
       }
-      .value {
-        margin-left: 5px;
-        p {
-          font-size: 15px;
-        }
-        p:last-child {
-          margin-top: 3px;
-        }
+      .honor_box > div {
+        display: inline-block;
+        vertical-align: middle;
       }
-    }
-    .honor_box > div {
-      display: inline-block;
-      vertical-align: middle;
     }
   }
 }

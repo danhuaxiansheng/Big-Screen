@@ -31,7 +31,7 @@ export default defineComponent({
 })
 </script>
 
-<style>
+<style scoped>
 img {
   height: 100%;
   width: 100%;

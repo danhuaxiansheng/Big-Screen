@@ -6,20 +6,13 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
       redirect: "/login",
-      // component: HomeView
     },
-    // {
-    //   path: '/about',
-    //   name: 'about',
-    //   component: () => import('../views/AboutView.vue')
-    // },
     {
       path: "/login",
       name: "Login",
       component: () => import("../views/Login/index.vue"),
-      meta: { title: "龙大美食全流程监控台|登录", },
+      meta: { title: "龙大美食全流程监控台", },
     },
 
     {
@@ -37,7 +30,7 @@ const router = createRouter({
     {
       path: "/monitor",
       name: "monitor",
-      component: () => import("../views/monitor.vue"),
+      component: () => import("../views/Monitor/index.vue"),
       meta: { title: "龙大美食全流程监控台", },
     },
   ]

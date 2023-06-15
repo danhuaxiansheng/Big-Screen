@@ -1,6 +1,6 @@
 <template>
   <div class="right_two">
-    <div class="one_box">
+    <div class="weather_box">
       <div class="left_icon">
         <img v-if="weatherData.realtime?.info == '多云'" :src="cloud" />
         <img v-else-if="weatherData.realtime?.info == '晴'" :src="sun" />
@@ -143,59 +143,79 @@ i {
 }
 
 .right_two {
-  margin-top: 18px;
-}
-
-.one_box {
-  border: 1px solid #004d68;
-  padding: 15px 30px;
-  background: rgba(0, 0, 0, 0.2);
-  .left_icon {
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 15px;
-    img {
-      width: 26px;
-    }
-  }
-  .right_text {
-    display: inline-block;
-    vertical-align: middle;
-    .time {
-      margin-bottom: 5px;
-      span {
-        margin: 0 5px 0 0;
+  margin-top: 14px;
+  height: calc(100% - 14px);
+  .weather_box {
+    border: 1px solid #004d68;
+    padding: 14px 30px;
+    background: rgba(0, 0, 0, 0.2);
+    height: 80px;
+    font-size: 15px;
+    .left_icon {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 15px;
+      img {
+        width: 26px;
       }
     }
-    .text {
-      div {
-        display: inline-block;
-        color: rgb(127, 127, 127);
-        margin-right: 10px;
+    .right_text {
+      display: inline-block;
+      vertical-align: middle;
+      .time {
+        margin-bottom: 5px;
         span {
+          margin: 0 5px 0 0;
+        }
+      }
+      .text {
+        div {
+          display: inline-block;
           color: rgb(127, 127, 127);
+          margin-right: 10px;
+          span {
+            color: rgb(127, 127, 127);
+          }
+        }
+      }
+    }
+  }
+
+  .two_box {
+    margin-top: 30px;
+    height: calc(100% - 30px - 80px);
+    .tabsFace {
+      height: 100%;
+      background: rgba(9, 23, 46, 0.8);
+      .tabsBox {
+        height: 100%;
+        padding: 10px;
+        img {
+          height: 484px;
+          width: 100%;
+        }
+        span {
+          font-size: 15px;
+          color: #d2d2d2;
+          margin-top: 26px;
+          display: inline-block;
         }
       }
     }
   }
 }
-.two_box {
-  margin-top: 30px;
+
+.one_box {
+  height: 46%;
+  border: 1px solid #004d68;
+  padding: 15px 30px;
+  background: rgba(0, 0, 0, 0.2);
+
   .tabsFace {
-    background: rgba(9, 23, 46, 0.8);
-    .tabsBox {
-      height: 725px;
-      padding: 10px;
-      img {
-        height: 484px;
-        width: 100%;
-      }
-      span {
-        font-size: 14px;
-      }
-    }
+    height: 100%;
   }
 }
+
 .title_box {
   position: relative;
   text-align: center;

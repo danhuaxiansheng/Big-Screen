@@ -297,7 +297,8 @@ export default {
 
 <style lang="scss" scoped>
 .screenBox {
-  background-image: url(@/assets/image/bg.jpg);
+  background: url(@/assets/image/bg.png) no-repeat scroll top center;
+  background-size: auto 100%;
   height: 100%;
   width: 100%;
 }
@@ -420,13 +421,15 @@ export default {
 
 .lr_content {
   position: relative;
-  margin-top: 40px;
+  margin: 40px 0;
+  height: calc(100% - 130px);
 }
 
 .lr_left {
   position: absolute;
   left: 0;
   width: 26%;
+  height: 100%;
 }
 
 .lr_center {
@@ -434,14 +437,15 @@ export default {
   width: 46%;
   left: 50%;
   top: 40px;
-  height: 810px;
   transform: translateX(-50%);
+  height: calc(100% - 40px);
 }
 
 .lr_right {
   position: absolute;
   right: 0;
   width: 26%;
+  height: 100%;
 }
 
 .leftTwo :deep(.snake-borders) {
