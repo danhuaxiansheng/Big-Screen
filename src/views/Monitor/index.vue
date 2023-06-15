@@ -2,7 +2,7 @@
   <div class="supervisoryConsole">
     <div class="top">
       <div class="topLeft">
-        <img src="./img/logo1.png" alt="" />
+        <img src="@/assets/image/logo.png" alt="" />
       </div>
       <div class="topCenter">
         <div>龙大美食全流程监控台</div>

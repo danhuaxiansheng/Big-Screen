@@ -6,11 +6,11 @@
           <div class="list" v-for="(v, k) in oneList" :key="k">
             <div class="name">{{ v.name }}</div>
             <div class="number">{{ v.number }}</div>
-            <div class="percentage">
+            <!-- <div class="percentage">
               同比增幅
               <span class="num">{{ v.percentage }} %</span>
               <i class="fa fa-sort-asc"></i>
-            </div>
+            </div> -->
           </div>
           <div class="title">
             <div>2022 年度数据</div>
@@ -138,16 +138,16 @@ export default {
       text-align: right;
     }
     .list {
-      width: 35%;
+      width: 42%;
       margin-bottom: 20px;
       .name {
         letter-spacing: 1px;
-        font-size: 16px;
+        font-size: 20px;
         color: #fff;
       }
       .number {
         color: rgb(255, 192, 0);
-        font-size: 28px;
+        font-size: 30px;
         font-weight: bold;
         letter-spacing: 2px;
         margin: 15px 0;
@@ -169,16 +169,17 @@ export default {
     }
     .title {
       position: absolute;
-      bottom: 50px;
+      bottom: 80px;
       left: 50%;
       transform: translateX(-50%);
       text-align: center;
       div {
         display: inline-block;
         background: rgba(255, 255, 255, 0.2);
-        line-height: 26px;
-        border-radius: 13px;
+        line-height: 42px;
+        border-radius: 3px;
         letter-spacing: 1px;
+        font-size: 15px;
         padding: 0 25px;
       }
     }
