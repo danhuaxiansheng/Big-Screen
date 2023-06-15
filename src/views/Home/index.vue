@@ -3,8 +3,8 @@
     <!--<amap class="amap"></amap>-->
     <div class="lr_title">
       <div class="line">
-        <img class="left animated fadeInLeft" src="../../assets/image/left.png" alt />
-        <img class="right animated fadeInRight" src="../../assets/image/right.png" alt />
+        <img class="left animated fadeInLeft" src="../../assets/image/left.png" />
+        <img class="right animated fadeInRight" src="../../assets/image/right.png" />
       </div>
       <div class="arrowLeft"></div>
       <div class="centerBox animated fadeInDownBig">
@@ -113,7 +113,7 @@ export default {
     }
   },
   methods: {
-    jumpRouter(data) {
+    jumpRouter(data: any) {
       this.leftOneShow = data
       this.rightOneShow = data
       this.mapShow = data
@@ -132,26 +132,108 @@ export default {
       this.weatherData.list['twoTem'] = twoTem
     },
     getNewHomeData() {
-      this.farmData = JSON.parse(
-        '{"todayBreedNO":79,"todayLitterNO":1631,"todayWeaningNO":2308,"boughtNO":6448,"butcherNO":3930,"cleanPigNO":2593,"freshFrozenWeight":89347.6,"endProductWeight":88900.35,"soldWeight":108935.12,"survivalRate":97.52,"todaySoldPrice":13.84,"preTodaySoldPrice":14.16,"totalSoldAmount":16126194.67,"totalSoldCount":9004.54,"todaySoldPigWeight":216195,"currentYearButcherNO":3814889,"currentYearProductWeight":339898624.55,"todayProductWeight":475336.55,"todaySoldPigCount":2059,"todayDoDish":550.38,"todaySlaughter":13668,"todayTotalYield":123.6,"todayEnergyUse":827.56,"todayUngradedPercent":0.14,"todaySuccessPercent":152.09,"todayTotalDeliver":117.98,"todayYZCDeliver":29.24,"todayZKDeliver":22.83,"todaySSDeliver":8.69,"todayLTDeliver":28.6,"todayDKHDeliver":13.43,"todayCYDeliver":9.76,"todayLHDeliver":5.43,"currentStockTotal":0,"currentJRYLStockTotal":651,"currentZRYLStockTotal":7423,"currentNRYLStockTotal":735,"currentSFGCStockTotal":23,"currentCBLHStockTotal":0.19,"currentZKCPStockTotal":27,"currentTLDPStockTotal":87,"todayPurchaseTotal":21770,"todayPurchaseGrossWeight":2817038,"todayPurchaseAverageWeight":132.07,"todayPurchasePrice":13.22,"todayPurchaseLevelPercent":77.7,"todayPurchasePeelPercent":72.7,"todaySlaughterTotal":19528,"todaySlaughterBTTotal":16989.36,"todaySlaughterJRWeight":213525.02,"todaySlaughterWHRWeight":98550.01,"todaySlaughterGTWeight":16425.01,"todaySlaughterXHWeight":32850.01,"todaySlaughterBYSRWeight":5407.31,"currentWeekBuyTotal":0,"currentWeekBuyChickenWeight":0,"currentWeekBuyDuckWeight":0,"currentWeekBuyPorkWeight":0,"currentWeekBuyBeefWeight":0,"currentWeekBuyProteinWeight":0,"todaySaleMoney":4300.88,"nowMonthSaleMoney":85739.25,"nowYearSaleMoney":20560841144.64,"todayOrderNumber":2878,"nowMonthOrderNumber":54114,"currentDistributorNumber":32546,"todayAddDistributorNumber":5,"nowMonthAddDistributorNumber":78,"todayLoginDistributorNumber":9748,"activeDistributorNumber":12569,"nowMonthSaleZKMoney":2400,"nowMonthSaleSSMoney":910,"nowMonthSaleTLMoney":38000,"nowMonthSaleSXMoney":24000,"nowMonthSaleYZCMoney":3780,"nowMonthSaleDPMoney":13000,"currentOverOrderNumber":35472,"currentOverOrderMoney":56383,"currentNotPayOrderNumber":15439,"currentNotPayOrderMoney":24540,"currentReturnOrderNumber":323,"currentReturnOrderMoney":829,"currentNotDeliverOrderNumber":8347,"currentNotDeliverOrderMoney":13791}'
-      )
+      this.farmData = {
+        todayBreedNO: 79,
+        todayLitterNO: 1631,
+        todayWeaningNO: 2308,
+        boughtNO: 6448,
+        butcherNO: 3930,
+        cleanPigNO: 2593,
+        freshFrozenWeight: 89347.6,
+        endProductWeight: 88900.35,
+        soldWeight: 108935.12,
+        survivalRate: 97.52,
+        todaySoldPrice: 13.84,
+        preTodaySoldPrice: 14.16,
+        totalSoldAmount: 16126194.67,
+        totalSoldCount: 9004.54,
+        todaySoldPigWeight: 216195,
+        currentYearButcherNO: 3814889,
+        currentYearProductWeight: 339898624.55,
+        todayProductWeight: 475336.55,
+        todaySoldPigCount: 2059,
+        todayDoDish: 550.38,
+        todaySlaughter: 13668,
+        todayTotalYield: 123.6,
+        todayEnergyUse: 827.56,
+        todayUngradedPercent: 0.14,
+        todaySuccessPercent: 152.09,
+        todayTotalDeliver: 117.98,
+        todayYZCDeliver: 29.24,
+        todayZKDeliver: 22.83,
+        todaySSDeliver: 8.69,
+        todayLTDeliver: 28.6,
+        todayDKHDeliver: 13.43,
+        todayCYDeliver: 9.76,
+        todayLHDeliver: 5.43,
+        currentStockTotal: 0,
+        currentJRYLStockTotal: 651,
+        currentZRYLStockTotal: 7423,
+        currentNRYLStockTotal: 735,
+        currentSFGCStockTotal: 23,
+        currentCBLHStockTotal: 0.19,
+        currentZKCPStockTotal: 27,
+        currentTLDPStockTotal: 87,
+        todayPurchaseTotal: 21770,
+        todayPurchaseGrossWeight: 2817038,
+        todayPurchaseAverageWeight: 132.07,
+        todayPurchasePrice: 13.22,
+        todayPurchaseLevelPercent: 77.7,
+        todayPurchasePeelPercent: 72.7,
+        todaySlaughterTotal: 19528,
+        todaySlaughterBTTotal: 16989.36,
+        todaySlaughterJRWeight: 213525.02,
+        todaySlaughterWHRWeight: 98550.01,
+        todaySlaughterGTWeight: 16425.01,
+        todaySlaughterXHWeight: 32850.01,
+        todaySlaughterBYSRWeight: 5407.31,
+        currentWeekBuyTotal: 0,
+        currentWeekBuyChickenWeight: 0,
+        currentWeekBuyDuckWeight: 0,
+        currentWeekBuyPorkWeight: 0,
+        currentWeekBuyBeefWeight: 0,
+        currentWeekBuyProteinWeight: 0,
+        todaySaleMoney: 4300.88,
+        nowMonthSaleMoney: 85739.25,
+        nowYearSaleMoney: 20560841144.64,
+        todayOrderNumber: 2878,
+        nowMonthOrderNumber: 54114,
+        currentDistributorNumber: 32546,
+        todayAddDistributorNumber: 5,
+        nowMonthAddDistributorNumber: 78,
+        todayLoginDistributorNumber: 9748,
+        activeDistributorNumber: 12569,
+        nowMonthSaleZKMoney: 2400,
+        nowMonthSaleSSMoney: 910,
+        nowMonthSaleTLMoney: 38000,
+        nowMonthSaleSXMoney: 24000,
+        nowMonthSaleYZCMoney: 3780,
+        nowMonthSaleDPMoney: 13000,
+        currentOverOrderNumber: 35472,
+        currentOverOrderMoney: 56383,
+        currentNotPayOrderNumber: 15439,
+        currentNotPayOrderMoney: 24540,
+        currentReturnOrderNumber: 323,
+        currentReturnOrderMoney: 829,
+        currentNotDeliverOrderNumber: 8347,
+        currentNotDeliverOrderMoney: 13791
+      }
 
       this.twoData[0].number = this.farmData.todayDoDish
       this.twoData[1].number = this.farmData.todaySlaughterTotal
       this.twoData[2].number = (this.farmData.totalSoldAmount / 10000).toFixed(2)
 
-      // this.$set(this.twoData[0], 'number', this.farmData.todayDoDish)
-      // this.$set(this.twoData[1], 'number', this.farmData.todaySlaughterTotal)
-      // this.$set(this.twoData[2], 'number', (this.farmData.totalSoldAmount / 10000).toFixed(2))
+      this.newData = {
+        orderNO: 20563085.50288957,
+        farmDealAmount: 15928112.8,
+        estateBackAmount: 3306078.15,
+        estateSignAmount: 3348496.37
+      }
 
-      this.newData = JSON.parse(
-        '{"orderNO":20563085.50288957,"farmDealAmount":15928112.8,"estateBackAmount":3306078.15,"estateSignAmount":3348496.37}'
-      )
       this.twoData[3].number = (this.newData.estateSignAmount / 10000).toFixed(2)
-      // this.$set(this.twoData[3], 'number', (this.newData.estateSignAmount / 10000).toFixed(2))
     },
     // 键盘事件
-    handleKeyup(event) {
+    handleKeyup(event: any) {
       const e = event || window.event || arguments.callee.caller.arguments[0]
       if (!e) return
       const { key } = e
@@ -198,10 +280,14 @@ export default {
       this.rightTwoShow = !this.rightTwoShow
       clearTimeout(s1)
     }, 500)
-    // let timer = setInterval(() => {
-    //   this.getNewHomeData()
-    // }, 5000)
-    // window.addEventListener('keyup', this.handleKeyup)
+
+    var username = window.sessionStorage.getItem('username')
+    var password = window.sessionStorage.getItem('password')
+    if (username == null || password == null) {
+      this.$router.push({
+        path: '/login'
+      })
+    }
   }
 }
 </script>

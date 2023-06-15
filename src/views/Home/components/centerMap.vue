@@ -10,7 +10,7 @@
     </div>
   </div>
 </template>
-<script>
+<script lang="ts">
 import chinaMap from './chinaMap.vue'
 export default {
   components: {
@@ -67,7 +67,7 @@ export default {
     }
   },
   methods: {
-    jumpRouter(e) {
+    jumpRouter(e: any) {
       //console.log(e);
       if (e.isRouter == true) {
         this.$emit('bus', false)
@@ -82,7 +82,7 @@ export default {
     this.routerData = this.navData
     for (let i in this.routerData) {
       for (let k in this.routerLists) {
-        if (this.routerData[i].src == this.routerLists[k].label.replace(/\s+/g, '')) {
+        if ((this.routerData[i]?.src as string) == this.routerLists[k].label.replace(/\s+/g, '')) {
           this.routerLists[k].isRouter = true
         }
       }

@@ -50,7 +50,7 @@
                 </div>
                 <div v-else class="icon">
                   <div class="img">
-                    <img :src="v.imgSrc" alt />
+                    <img :src="v.imgSrc" />
                   </div>
                 </div>
                 <div class="value">
@@ -65,7 +65,7 @@
     </div>
   </div>
 </template>
-<script>
+<script lang="ts">
 import honorImg from '../images/honor.png'
 export default {
   props: ['oneList'],

@@ -2,10 +2,10 @@
   <div class="right_two">
     <div class="one_box">
       <div class="left_icon">
-        <img v-if="weatherData.realtime?.info == '多云'" :src="cloud" alt />
-        <img v-else-if="weatherData.realtime?.info == '晴'" :src="sun" alt />
-        <img v-else-if="weatherData.realtime?.info.indexOf('雨') != -1" :src="rain" alt />
-        <img v-else :src="sun_cloud" alt />
+        <img v-if="weatherData.realtime?.info == '多云'" :src="cloud" />
+        <img v-else-if="weatherData.realtime?.info == '晴'" :src="sun" />
+        <img v-else-if="weatherData.realtime?.info.indexOf('雨') != -1" :src="rain" />
+        <img v-else :src="sun_cloud" />
       </div>
       <div class="right_text">
         <div class="time">
@@ -74,7 +74,7 @@
     </div>
   </div>
 </template>
-<script>
+<script lang="ts">
 import cloud from '@/assets/image/cloud.png'
 import sun from '@/assets/image/sun.png'
 import rain from '@/assets/image/rain.png'
@@ -105,14 +105,14 @@ export default {
       let oDate = new Date()
       let day = oDate.getDay()
       let hour = oDate.getHours()
-      let minute = oDate.getMinutes()
+      let minute: any = oDate.getMinutes()
       minute = minute < 10 ? '0' + minute : minute
-      let miao = oDate.getSeconds()
+      let miao: any = oDate.getSeconds()
       miao = miao < 10 ? '0' + miao : miao
       let year = oDate.getFullYear()
-      let month = oDate.getMonth() + 1
+      let month: any = oDate.getMonth() + 1
       month = month < 10 ? '0' + month : month
-      let date = oDate.getDate()
+      let date: any = oDate.getDate()
       date = date < 10 ? '0' + date : date
       this.nowDate = year + '-' + month + '-' + date
       let weeks = new Array('星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六')
@@ -127,7 +127,6 @@ export default {
   },
   beforeDestroy() {
     clearInterval(this.timer)
-    this.timer = null
   }
 }
 </script>

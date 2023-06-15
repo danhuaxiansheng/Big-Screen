@@ -31,13 +31,12 @@
             >
             </el-input>
           </el-form-item>
-          <!-- <BorderBox8 style="height: 40px"> -->
-          <!-- prevent 修饰符 阻止该元素的默认keyup事件 -->
-          <el-button :loading="loading" type="primary" class="login-btn" @click.prevent="onLogin"
-            >登录</el-button
-          >
-          <!-- </BorderBox8> -->
-          <!-- <BorderBox1 :color="['red', 'green']" backgroundColor="blue">BorderBox1</BorderBox1> -->
+
+          <BorderBox8 :dur="5">
+            <el-button :loading="loading" type="primary" class="login-btn" @click.prevent="onLogin"
+              >登录</el-button
+            >
+          </BorderBox8>
         </el-form>
       </section>
     </div>
@@ -48,7 +47,6 @@ import { defineComponent, ref, reactive, unref } from 'vue'
 import router from '@/router/index'
 import Header from '@/components/Header/index.vue'
 import { ElMessage } from 'element-plus'
-// import { BorderBox8 } from '@kjgl77/datav-vue3'
 
 /**上传证书弹出框 */
 export default defineComponent({
@@ -102,14 +100,11 @@ export default defineComponent({
 
             loading.value = true
             router.push({
-              path: '/homeIndex'
+              path: '/home'
             })
           } else {
             ElMessage.error('账户或密码错误！')
           }
-          //  else {
-          //     alert("用户名或密码错误！请重新登录")
-          // }
         }
       })
     }
