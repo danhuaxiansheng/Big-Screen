@@ -17,9 +17,12 @@
       .login-btn {
         width: 100%;
       }
-      :deep(.el-input__wrapper) {
-        input {
-          height: 38px;
+      .form-input {
+        height: 38px;
+        :deep(.el-input__wrapper) {
+          input {
+            height: 38px;
+          }
         }
       }
     }

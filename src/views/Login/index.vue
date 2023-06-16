@@ -14,6 +14,7 @@
           <el-form-item prop="username">
             <el-input
               v-model="loginForm.username"
+              class="form-input"
               placeholder="请输入用户名"
               maxlength="100"
               clearable
@@ -24,6 +25,7 @@
           <el-form-item prop="password">
             <el-input
               type="password"
+              class="form-input"
               v-model="loginForm.password"
               maxlength="100"
               placeholder="请输入密码"
