@@ -80,9 +80,56 @@ export default {
       ),
       newData: {},
       farmData: {},
-      weatherData: JSON.parse(
-        '{"city":"成都","list":{},"realtime":{"temperature":"21","humidity":"80","info":"阵雨","wid":"03","direct":"南风","power":"1级","aqi":"45"},"future":[{"date":"2023-06-15","temperature":"18/22℃","weather":"阵雨转阴","wid":{"day":"03","night":"02"},"direct":"南风"},{"date":"2023-06-16","temperature":"18/24℃","weather":"阴","wid":{"day":"02","night":"02"},"direct":"南风"},{"date":"2023-06-17","temperature":"20/27℃","weather":"阴转多云","wid":{"day":"02","night":"01"},"direct":"南风"},{"date":"2023-06-18","temperature":"21/32℃","weather":"阴","wid":{"day":"02","night":"02"},"direct":"持续无风向"},{"date":"2023-06-19","temperature":"20/33℃","weather":"阴","wid":{"day":"02","night":"02"},"direct":"持续无风向"}]}'
-      ),
+      weatherData: {
+        city: '烟台',
+        list: {},
+        realtime: {
+          temperature: '21',
+          humidity: '49',
+          info: '晴朗',
+          wid: '03',
+          direct: '南风',
+          power: '1级',
+          aqi: '97'
+        },
+        future: [
+          {
+            date: '2023-06-15',
+            temperature: '19/32℃',
+            weather: '晴朗',
+            wid: { day: '03', night: '02' },
+            direct: '南风'
+          },
+          {
+            date: '2023-06-16',
+            temperature: '19/32℃',
+            weather: '阴',
+            wid: { day: '02', night: '02' },
+            direct: '南风'
+          },
+          {
+            date: '2023-06-17',
+            temperature: '20/27℃',
+            weather: '阴转多云',
+            wid: { day: '02', night: '01' },
+            direct: '南风'
+          },
+          {
+            date: '2023-06-18',
+            temperature: '21/32℃',
+            weather: '阴',
+            wid: { day: '02', night: '02' },
+            direct: '持续无风向'
+          },
+          {
+            date: '2023-06-19',
+            temperature: '20/33℃',
+            weather: '阴',
+            wid: { day: '02', night: '02' },
+            direct: '持续无风向'
+          }
+        ]
+      },
       twoData: [
         {
           name: '预制菜肴',

@@ -75,8 +75,9 @@ body {
 
 /* 美化滚动条 */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  /* width: 8px; */
+  /* height: 8px; */
+  display: none;
 }
 ::-webkit-scrollbar-track {
   width: 6px;
