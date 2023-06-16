@@ -17,13 +17,22 @@
       .login-btn {
         width: 100%;
       }
+      :deep(.el-input__wrapper) {
+        input {
+          height: 38px;
+        }
+      }
     }
   }
 
   .el-input__wrapper {
     background: none;
   }
-
+  :deep(.el-input__wrapper) {
+    input {
+      height: 38px;
+    }
+  }
   .login-btn {
     text-shadow: 0 0 15px #001d4e;
     color: #d2f5ff;
@@ -36,11 +45,6 @@
     border: none;
     border-radius: 4px;
     height: 38px;
-  }
-
-  .el-input__inner {
-    height: 36px;
-    color: #d2f5ff;
   }
 }
 
