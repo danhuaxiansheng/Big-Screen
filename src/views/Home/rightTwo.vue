@@ -194,8 +194,6 @@ i {
       .tabsBox {
         height: 100%;
         padding: 10px;
-        .city-img {
-        }
         .bottom-img {
           height: 307px;
           width: 100%;
