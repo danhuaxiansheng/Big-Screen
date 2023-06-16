@@ -82,7 +82,8 @@ export default {
     this.routerData = this.navData
     for (let i in this.routerData) {
       for (let k in this.routerLists) {
-        if ((this.routerData[i]?.src as string) == this.routerLists[k].label.replace(/\s+/g, '')) {
+        var src = this.routerData[i]?.src as string
+        if (src == this.routerLists[k].label.replace(/\s+/g, '')) {
           this.routerLists[k].isRouter = true
         }
       }

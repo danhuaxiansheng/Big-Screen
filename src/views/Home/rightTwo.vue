@@ -1,5 +1,5 @@
 <template>
-  <div class="right_two">
+  <div class="right_box">
     <div class="weather_box">
       <div class="left_icon">
         <img v-if="weatherData.realtime?.info == '多云'" :src="cloud" />
@@ -58,24 +58,56 @@
         </div>
       </div>
     </div>
-    <div class="tabsType1 two_box">
-      <div class="tabsFace">
+    <div class="tabsType1 box_content">
+      <div class="tabsFace head-desc">
         <div class="tabsBox">
           <img class="top-img" :src="city_img" />
-          <span>
+          <span class="desc">
             蓝润集团创始于1997年，秉承“实业报国
             服务民生”的企业使命，深耕大消费领域，是以食品业为主的大型综合性产业集团，现拥有员工2万余人，管理资产规模超千亿元，与全球20多个国家和地区建立合作。连续多年入选“中国企业500强”“中国民营企业500强”，位列“四川民营企业100强”第三位。
-
-            <!-- 蓝润集团创始于1997年，秉承“实业报国
-            服务民生”的企业使命，深耕大消费领域，是以食品业为主的大型综合性产业集团，现拥有员工2万余人，与全球20多个国家和地区建立合作。连续多年入选“中国企业500强”“中国民营企业500强”，位列“四川民营企业100强”第三位。2022年，集团产值808亿元。
-            <br />
-            <br />
-            蓝润集团顺应现代消费升级需求，融入科技化发展进程，旗下食品主业以工匠精神与科技创新，焕发中华美食新生机。在深耕食品主业的同时，稳步运营与管理旗下商业、酒店等优质资产，满足多元化消费场景需求。目前，管理资产规模超千亿元。
-            <br />
-            <br />
-            初心不改，永铭党恩。蓝润集团党委是在四川省委组织部指导和关怀下建立的优秀基层党组织。集团党委在实践中创新“五心”党建工作法，提炼出具有蓝润特色的“五朵金花”党建品牌，坚持和加强党组织在企业的引领作用，助力企业做实、做强民生产业，打造川企金字招牌。集团以社会主义核心价值观为企业文化纲领，秉持“梦想成就卓越”的发展理念，不断提升企业的凝聚力、战斗力，以实干创新精神推动高质量可持续发展，坚持与员工、合作伙伴、社会共享成就。 -->
           </span>
-          <img class="bottom-img" src="@/assets/image/test.jpg" />
+        </div>
+      </div>
+      <div class="box-bottom">
+        <div class="">
+          <p>服务国家战略，践行社会责任</p>
+          <div class="box-list">
+            <div class="bottom-list">
+              <span>乡村振兴</span>
+              <span>
+                产业项目<span class="blue-color">近50个</span>，受益贫困人口<span class="blue-color"
+                  >10万</span
+                >余人，参与基础设施建设，受益近1万户家庭，参与<span class="blue-color"
+                  >“万企帮万村”</span
+                >、<span class="blue-color">“万企兴万村”</span
+                ><span class="blue-color">国省重点</span>行动
+              </span>
+            </div>
+            <div class="bottom-list">
+              <span>公益奉献</span>
+              <span>
+                公益捐赔<span class="blue-color">超亿元</span>， 抗击新冠疫情捐款捐物<span
+                  class="blue-color"
+                  >800余万元</span
+                >，扶持商家减免租金<span class="blue-color">360万元</span
+                >，参与基层治理，协助政府核酸检测<span class="blue-color">超10万人</span>
+              </span>
+            </div>
+            <div class="bottom-list">
+              <span>稳产保传</span>
+              <span>
+                产业链分布全国<span class="blue-color">近30个</span
+                >地区，助力疫区保供，提供产品<span class="blue-color">近5000吨</span>
+              </span>
+            </div>
+            <div class="bottom-list">
+              <span>共同富裕</span>
+              <span
+                >直接及间接创造就业岗位<span class="blue-color">超百万个</span
+                >，主要产业农村户口比例占比<span class="blue-color">高达80% </span></span
+              >
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -101,7 +133,6 @@ export default {
       nowDate: '',
       week: '',
       hourTime: '',
-      timer: null,
       oneTem: '',
       twoTem: '',
       city_img: city_img
@@ -128,12 +159,9 @@ export default {
     }
   },
   mounted() {
-    this.timer = setInterval(() => {
+    setInterval(() => {
       this.getTime()
     }, 1000)
-  },
-  beforeDestroy() {
-    clearInterval(this.timer)
   }
 }
 </script>
@@ -149,7 +177,48 @@ i {
   color: $juse;
 }
 
-.right_two {
+.box-bottom {
+  height: calc(100% - 450px - 20px);
+  margin-top: 20px;
+  overflow-x: auto;
+  p {
+    color: rgb(255, 192, 0);
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 13px;
+  }
+
+  .blue-color {
+    font-size: 15px;
+    font-weight: normal;
+    display: initial;
+    color: #67c6e6;
+  }
+  .bottom-list {
+    height: 155px;
+    width: calc(50% - 10px);
+    float: left;
+    margin-right: 10px;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    & > span:nth-child(1) {
+      color: rgb(255, 192, 0);
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 3px;
+      display: inline-block;
+    }
+    & > span:last-child {
+      color: #d2f5ff;
+      font-size: 13px;
+      display: inline-block;
+    }
+  }
+}
+
+.right_box {
   margin-top: 8px;
   height: calc(100% - 8px);
   .weather_box {
@@ -185,30 +254,21 @@ i {
     }
   }
 
-  .two_box {
+  .box_content {
     margin-top: 30px;
     height: calc(100% - 30px - 80px);
-    .tabsFace {
-      height: 100%;
+    .head-desc {
       background: rgba(9, 23, 46, 0.8);
       .tabsBox {
-        height: 100%;
         padding: 10px;
-        .bottom-img {
-          height: 307px;
-          width: 100%;
-        }
-        img {
-          opacity: 0.8;
-        }
-        span {
+        span.desc {
           color: #d2f5ff;
           display: inline-block;
           font-size: 15px;
-          margin: 47px 0px;
           overflow-x: auto;
           letter-spacing: 3px;
           text-indent: 2em;
+          margin-top: 10px;
         }
       }
     }

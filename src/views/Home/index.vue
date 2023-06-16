@@ -75,111 +75,58 @@ export default {
       rightOneShow: false,
       rightTwoShow: false,
       mapShow: false,
-      homeData: JSON.parse(
-        '{"staffData":{"membePercentage":178,"staffNum":21045,"memberNum":2246},"assetsArr":[{"income":19.36,"year":2015,"assets":198.25},{"income":25.17,"year":2016,"assets":325.11},{"income":34.21,"year":2017,"assets":345.81},{"income":77.61,"year":2018,"assets":450.36},{"income":210.76,"year":2019,"assets":583.89}],"allTotalArr":[{"year":"2022","number":"808亿","percentage":13.5,"name":"总产值"},{"year":"2022","number":"990亿","percentage":7.2,"name":"总资产"}],"yearTaskData":{"estate":92,"health":93,"supply":90,"farming":90},"assetsData":{"yearArray":[{"year":2019,"plateAssets":[{"number":119.35,"name":"农牧业"},{"number":440.18,"name":"房地产"},{"number":4.94,"name":"大健康"},{"number":18.7,"name":"供应链"},{"number":0.4,"name":"酒店"},{"number":0.32,"name":"其他"}],"percentage":"14.36"}]},"weatherData":{"img":"https://bk.landarun.com/group1/M00/02/56/CqwVDV_Fu4WAXa6rAAAWha6wEN8528.png","temperatureText":"小雨","quality":"32 优","temperature":"6℃~9℃","humidity":"95%"},"navData":[{"src":"房地产"},{"src":"大健康"},{"src":"供应链"},{"src":"酒店"},{"src":"物业"}]}'
-      ),
-      newData: {},
-      farmData: {},
-      weatherData: {
-        city: '烟台',
-        list: {},
-        realtime: {
-          temperature: '21',
-          humidity: '49',
-          info: '晴朗',
-          wid: '03',
-          direct: '南风',
-          power: '1级',
-          aqi: '97'
+      homeData: {
+        staffData: { membePercentage: 178, staffNum: 21045, memberNum: 2246 },
+        assetsArr: [
+          { income: 19.36, year: 2015, assets: 198.25 },
+          { income: 25.17, year: 2016, assets: 325.11 },
+          { income: 34.21, year: 2017, assets: 345.81 },
+          { income: 77.61, year: 2018, assets: 450.36 },
+          { income: 210.76, year: 2019, assets: 583.89 }
+        ],
+        allTotalArr: [
+          { year: '2022', number: '808亿', percentage: 13.5, name: '总产值' },
+          { year: '2022', number: '990亿', percentage: 7.2, name: '总资产' }
+        ],
+        yearTaskData: { estate: 92, health: 93, supply: 90, farming: 90 },
+        assetsData: {
+          yearArray: [
+            {
+              year: 2019,
+              plateAssets: [
+                { number: 119.35, name: '农牧业' },
+                { number: 440.18, name: '房地产' },
+                { number: 4.94, name: '大健康' },
+                { number: 18.7, name: '供应链' },
+                { number: 0.4, name: '酒店' },
+                { number: 0.32, name: '其他' }
+              ],
+              percentage: '14.36'
+            }
+          ]
         },
-        future: [
-          {
-            date: '2023-06-15',
-            temperature: '19/32℃',
-            weather: '晴朗',
-            wid: { day: '03', night: '02' },
-            direct: '南风'
-          },
-          {
-            date: '2023-06-16',
-            temperature: '19/32℃',
-            weather: '阴',
-            wid: { day: '02', night: '02' },
-            direct: '南风'
-          },
-          {
-            date: '2023-06-17',
-            temperature: '20/27℃',
-            weather: '阴转多云',
-            wid: { day: '02', night: '01' },
-            direct: '南风'
-          },
-          {
-            date: '2023-06-18',
-            temperature: '21/32℃',
-            weather: '阴',
-            wid: { day: '02', night: '02' },
-            direct: '持续无风向'
-          },
-          {
-            date: '2023-06-19',
-            temperature: '20/33℃',
-            weather: '阴',
-            wid: { day: '02', night: '02' },
-            direct: '持续无风向'
-          }
+        weatherData: {
+          img: 'https://bk.landarun.com/group1/M00/02/56/CqwVDV_Fu4WAXa6rAAAWha6wEN8528.png',
+          temperatureText: '小雨',
+          quality: '32 优',
+          temperature: '6℃~9℃',
+          humidity: '95%'
+        },
+        navData: [
+          { src: '房地产' },
+          { src: '大健康' },
+          { src: '供应链' },
+          { src: '酒店' },
+          { src: '物业' }
         ]
       },
-      twoData: [
-        {
-          name: '预制菜肴',
-          number: '0',
-          text: '生猪交易额',
-          unit: '（万元）'
-        },
-        {
-          name: '屠宰分割',
-          number: '0',
-          text: '生猪屠宰量',
-          unit: '（头）'
-        },
-        {
-          name: '生猪养殖',
-          number: '0',
-          text: '肉制品加工',
-          unit: '（万元）'
-        },
-        {
-          name: '资产运营',
-          number: '0',
-          text: '收入',
-          unit: '（万元）'
-        }
-      ],
-      timer: null
-    }
-  },
-  methods: {
-    jumpRouter(data: any) {
-      this.leftOneShow = data
-      this.rightOneShow = data
-      this.mapShow = data
-      let s1 = setTimeout(() => {
-        this.leftTwoShow = data
-        this.rightTwoShow = data
-        clearTimeout(s1)
-      }, 500)
-    },
-    getWeatherData() {
-      let temperature = this.weatherData?.future[0].temperature.split('/')
-      let second = temperature[1].split('℃')
-      let oneTem = temperature[0] + '℃'
-      let twoTem = second[0] + '℃'
-      this.weatherData.list['oneTem'] = oneTem
-      this.weatherData.list['twoTem'] = twoTem
-    },
-    getNewHomeData() {
-      this.farmData = {
+      newData: {
+        orderNO: 20563085.50288957,
+        farmDealAmount: 15928112.8,
+        estateBackAmount: 3306078.15,
+        estateSignAmount: 3348496.37
+      },
+      farmData: {
         todayBreedNO: 79,
         todayLitterNO: 1631,
         todayWeaningNO: 2308,
@@ -264,19 +211,109 @@ export default {
         currentReturnOrderMoney: 829,
         currentNotDeliverOrderNumber: 8347,
         currentNotDeliverOrderMoney: 13791
-      }
-
+      },
+      weatherData: {
+        city: '烟台',
+        list: { oneTem: '', twoTem: '' },
+        realtime: {
+          temperature: '21',
+          humidity: '49',
+          info: '晴朗',
+          wid: '03',
+          direct: '南风',
+          power: '1级',
+          aqi: '97'
+        },
+        future: [
+          {
+            date: '2023-06-15',
+            temperature: '19/32℃',
+            weather: '晴朗',
+            wid: { day: '03', night: '02' },
+            direct: '南风'
+          },
+          {
+            date: '2023-06-16',
+            temperature: '19/32℃',
+            weather: '阴',
+            wid: { day: '02', night: '02' },
+            direct: '南风'
+          },
+          {
+            date: '2023-06-17',
+            temperature: '20/27℃',
+            weather: '阴转多云',
+            wid: { day: '02', night: '01' },
+            direct: '南风'
+          },
+          {
+            date: '2023-06-18',
+            temperature: '21/32℃',
+            weather: '阴',
+            wid: { day: '02', night: '02' },
+            direct: '持续无风向'
+          },
+          {
+            date: '2023-06-19',
+            temperature: '20/33℃',
+            weather: '阴',
+            wid: { day: '02', night: '02' },
+            direct: '持续无风向'
+          }
+        ]
+      },
+      twoData: [
+        {
+          name: '预制菜肴',
+          number: 0,
+          text: '生猪交易额',
+          unit: '（万元）'
+        },
+        {
+          name: '屠宰分割',
+          number: 0,
+          text: '生猪屠宰量',
+          unit: '（头）'
+        },
+        {
+          name: '生猪养殖',
+          number: '0',
+          text: '肉制品加工',
+          unit: '（万元）'
+        },
+        {
+          name: '资产运营',
+          number: '0',
+          text: '收入',
+          unit: '（万元）'
+        }
+      ],
+      timer: null
+    }
+  },
+  methods: {
+    jumpRouter(data: any) {
+      this.leftOneShow = data
+      this.rightOneShow = data
+      this.mapShow = data
+      let s1 = setTimeout(() => {
+        this.leftTwoShow = data
+        this.rightTwoShow = data
+        clearTimeout(s1)
+      }, 500)
+    },
+    getWeatherData() {
+      let temperature = this.weatherData?.future[0].temperature.split('/')
+      let second = temperature[1].split('℃')
+      let oneTem = temperature[0] + '℃'
+      let twoTem = second[0] + '℃'
+      this.weatherData.list['oneTem'] = oneTem
+      this.weatherData.list['twoTem'] = twoTem
+    },
+    getNewHomeData() {
       this.twoData[0].number = this.farmData.todayDoDish
       this.twoData[1].number = this.farmData.todaySlaughterTotal
       this.twoData[2].number = (this.farmData.totalSoldAmount / 10000).toFixed(2)
-
-      this.newData = {
-        orderNO: 20563085.50288957,
-        farmDealAmount: 15928112.8,
-        estateBackAmount: 3306078.15,
-        estateSignAmount: 3348496.37
-      }
-
       this.twoData[3].number = (this.newData.estateSignAmount / 10000).toFixed(2)
     },
     // 键盘事件
